@@ -2239,8 +2239,8 @@ input, select, textarea {
 /* Intro */
 
 	#intro {
-		background: url("../../images/intro.jpg");
-		background-size: 1600px 800px, contain;
+		background: url("../../images/intro.jpg") no-repeat;
+		background-size: 100%;
 		background-attachment: fixed, fixed;
 		background-position: top left, bottom center;
 		background-repeat: repeat, no-repeat;
@@ -2249,8 +2249,8 @@ input, select, textarea {
 /* One */
 
 	#one {
-		background:url("../../images/intro1.jpg");
-		background-size: 1600px 800px, contain;
+		background:url("../../images/intro1.jpg") no-repeat;
+		background-size: 100%;
 		background-attachment: fixed, fixed;
 		background-position: top left, center center;
 	}
@@ -2258,8 +2258,8 @@ input, select, textarea {
 /* Two */
 
 	#two {
-		background: url("../../images/two.jpg");
-		background-size: 1600px 800px, contain;
+		background: url("../../images/two.jpg") no-repeat;
+		background-size: 100%;
 		background-attachment: fixed, fixed;
 		background-position: top left, center center;
 	}
