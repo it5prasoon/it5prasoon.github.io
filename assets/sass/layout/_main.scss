@@ -1,204 +1,158 @@
 ///
-/// Big Picture by HTML5 UP
+/// Massively by HTML5 UP
 /// html5up.net | @ajlkn
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
 
 /* Main */
 
-	.main {
-		@include vendor('display', 'flex');
+	#main {
+		background-color: _palette(bg);
 		position: relative;
-		margin: 0;
-		overflow-x: hidden;
+		margin: 0 auto;
+		width: calc(100% - #{_size(padding) * 2});
+		max-width: _size(wrapper);
+		z-index: 2;
 
-		> .content {
-			width: 45em;
-			max-width: calc(100% - 4em);
-			margin: 0 auto;
+		> * {
+			@include padding((_size(padding) * 2), (_size(padding) * 2));
+			border-top: solid 2px _palette(border);
+			margin: 0;
 
-			> :last-child {
-				margin-bottom: 0;
+			&:first-child {
+				border-top: 0;
 			}
 		}
 
-		&.fullscreen {
-			min-height: 100%;
-		}
-
-		&.style1 {
-			@include vendor('align-items', 'center');
-			@include vendor('justify-content', 'center');
+		> footer {
 			text-align: center;
-			padding: 3em 0 3em 0;
-
-			h2 {
-				font-size: 4.25em;
-				line-height: 1em;
-			}
-
-			> .content {
-				@include vendor('transition', 'opacity #{_duration(fade-in)} ease');
-				@include vendor('transform', 'translateZ(0)');
-				opacity: 1.0;
-				margin: 0;
-			}
-
-			&.inactive > .content {
-				opacity: 0;
-			}
 		}
 
-		&.style2 {
-			@include vendor('align-items', 'center');
-			@include vendor('justify-content', 'center');
-			padding: 3em 0 3em 0;
-			overflow: hidden;
+		> .post {
+			@include padding((_size(padding) * 4), (_size(padding) * 4));
 
-			> .content {
-				@include vendor('transition', 'transform #{_duration(fade-in)} ease');
-				@include vendor('transform', 'translateZ(0)');
-				position: relative;
-				width: 35%;
-				margin: 0;
-			}
+			header {
+				&.major {
+					> .date {
+						margin-top: -2rem;
+					}
 
-			&.left {
-				@include vendor('justify-content', 'flex-start');
-			}
-
-			&.right {
-				@include vendor('justify-content', 'flex-end');
-			}
-
-			&.inactive {
-				&.left > .content {
-					@include vendor('transform', 'translateX(-100%)');
+					> h1, h2 {
+						font-size: 4rem;
+						line-height: 1.1;
+						margin: 0 0 _size(element-margin) 0;
+					}
 				}
+			}
 
-				&.right > .content {
-					@include vendor('transform', 'translateX(100%)');
+			&.featured {
+				text-align: center;
+			}
+
+			@include breakpoint('<=large') {
+				@include padding((_size(padding) * 3), (_size(padding) * 2));
+			}
+
+			@include breakpoint('<=small') {
+				@include padding((_size(padding) * 2), (_size(padding) * 1));
+
+				header {
+					&.major {
+						> .date {
+							margin-top: -1rem;
+							margin-bottom: _size(element-margin);
+						}
+
+						> h1, h2 {
+							font-size: 2.5rem;
+							line-height: 1.2;
+							margin: 0 0 (_size(element-margin) * 0.75) 0;
+						}
+					}
 				}
 			}
 		}
 
-		&.style3 {
-			text-align: center;
-			padding: 6em 0 6em 0;
+		> .posts {
+			@include fixed-grid((
+				columns:			2,
+				gutters:			(_size(padding) * 4),
+				horizontal-align:	center,
+				vertical-align:		flex-start,
+				flush:				false
+			));
+			width: 100%;
+			padding: 0;
 
-			.content > header {
-				margin-bottom: 2em;
-			}
+			> article {
+				border-color: _palette(border);
+				border-left-width: 2px;
+				border-style: solid;
+				border-top-width: 2px;
+				text-align: center;
 
-			&.primary {
-				background: _palette(bg);
-			}
-
-			&.secondary {
-				background: _palette(bg-alt);
-			}
-		}
-
-		&.dark {
-			color: _palette(dark, fg);
-
-			a {
-				color: inherit;
-			}
-
-			.button.style2 {
-				border-color: _palette(dark, fg);
-
-				&:hover {
-					background-color: transparentize(_palette(dark, border), 0.875);
+				> :last-child {
+					margin-bottom: 0;
 				}
 
-				&:active {
-					background-color: transparentize(_palette(dark, border), 0.75);
+				&:nth-child(2n - 1) {
+					border-left-width: 0;
 				}
 
-				&.down {
-					background-image: url('images/dark-arrow.svg');
-				}
-			}
-		}
-
-		body.is-touch & {
-			background-attachment: scroll !important;
-		}
-
-		@include breakpoint('<=xxlarge') {
-			&.style2 {
-				.content {
-					width: 40%;
+				&:nth-child(-n + 2) {
+					border-top-width: 0;
 				}
 			}
-		}
 
-		@include breakpoint('<=large') {
-			&.style2 {
-				.content {
-					width: 50%;
-				}
+			@include breakpoint('<=medium') {
+				@include fixed-grid-resize((
+					columns:			2,
+					gutters:			(_size(padding) * 2.5),
+					flush:				false
+				));
 			}
-		}
 
-		@include breakpoint('<=medium') {
-			&.style2 {
-				.content {
-					width: 60%;
+			@include breakpoint('<=small') {
+				@include fixed-grid-resize((
+					columns:			1,
+					gutters:			(_size(padding) * 2),
+					prev-columns:		2,
+					flush:				false
+				));
+
+				> article {
+					&:nth-child(2n - 1) {
+						border-left-width: 2px;
+					}
+
+					&:nth-child(-n + 2) {
+						border-top-width: 2px;
+					}
+
+					&:nth-child(n) {
+						border-left-width: 0;
+					}
+
+					&:nth-child(-n + 1) {
+						border-top-width: 0;
+					}
+
+					.image {
+						max-width: 25rem;
+						margin-left: auto;
+						margin-right: auto;
+					}
 				}
 			}
 		}
 
 		@include breakpoint('<=small') {
-			> .content {
-				br {
-					display: none;
-				}
-			}
-
-			&.fullscreen {
-				height: auto !important;
-			}
-
-			&.style1 {
-				padding: 4em 15px 4em 15px;
-
-				h2 {
-					font-size: 3em;
-				}
-			}
-
-			&.style2 {
-				padding: 6em 15px 6em 15px;
-
-				&:before,
-				&:after {
-					display: none !important;
-				}
-
-				.button.anchored {
-					display: none;
-				}
-
-				.content {
-					width: 100%;
-					max-width: 100%;
-					text-align: center;
-					@include vendor('transform', 'none');
-				}
-			}
-
-			&.style3 {
-				text-align: center;
-				padding: 3em 10px 3em 10px;
+			> * {
+				@include padding((_size(padding) * 1), (_size(padding) * 1));
 			}
 		}
 
 		@include breakpoint('<=xsmall') {
-			> .content {
-				max-width: calc(100% - 1.5em);
-			}
+			width: 100%;
 		}
 	}
