@@ -103,26 +103,7 @@
 										<li><a href="https://github.com/it5prasoon/Data-Structure-and-Algorithms" class="button">Full Story</a></li>
 									</ul>
 								</article>
-								<article>
-									<header>
-										<span class="date">April 25, 2020</span>
-										<h2>A Django Shopping Cart <h2>
-								         </header>
-									 <a href="https://github.com/it5prasoon/ShoppingCart" class="image fit"><img src="images/pic04.jpg" alt="" /></a>
-									 <p>This is the shopping cart project made for my institute Hack-a-Web Hackathon. It is based on MVT structure of Django. </p>
-									 <ul class="actions special">
-										<li><a href="https://github.com/it5prasoon/ShoppingCart" class="button">Full Story</a></li>
-									</ul>
-								</article>
-
-									
-								</article>
-
-
-
-
-
-
+							
 							</section>
 
 						<!-- Footer -->
