@@ -433,3 +433,44 @@ h6 { font-size: 16px;}
 
 
 
+/* For experience tree */
+
+.list-component {
+	border-left: 1px solid gray;
+	list-style: none;
+	margin-left: 10px;
+	padding-top: 20px
+  }
+   /* https://www.computerhope.com/issues/ch001705.htm */
+  .list-component .__item {
+	background: url(https://www.computerhope.com/issues/pictures/bullet.gif) no-repeat top left;
+	background-position: top left;
+	padding: 0 0 4px 60px;
+	margin-left: 1em;
+	position: relative;
+	right: 67px;
+	margin-bottom: 10px;
+	top: 10px;
+  }
+  
+  .card-component {
+	border: 1px solid gray;
+	border-radius: 5px;
+	padding: 1em;
+	max-width: 450px;
+	font-family: Arial;
+	position: relative;
+	bottom: 20px;
+  }
+  
+  .card-component .__year {
+	font-size: 1.5em;
+  }
+  
+  .card-component .__title {
+	font-size: 1em;
+  }
+  
+  .card-component .__text {
+	color: gray;
+  }
