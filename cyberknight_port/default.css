@@ -99,7 +99,7 @@ h6 { font-size: 16px;}
 
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-template-areas: 
+	grid-template-areas:
 		'nav-wrapper nav-wrapper'
 		'left-column right-column'
 	;
@@ -375,7 +375,7 @@ h6 { font-size: 16px;}
 .input-field{
 	width: 100%;
 	padding-top: 10px;
-	padding-bottom:10px; 
+	padding-bottom:10px;
 	background-color: var(--secondaryColor);
 	border-radius: 5px;
 	border:1px solid var(--borderColor);
@@ -387,7 +387,7 @@ h6 { font-size: 16px;}
 	margin-top: 10px;
 	width: 100%;
 	padding-top: 10px;
-	padding-bottom:10px; 
+	padding-bottom:10px;
 	color: #fff;
 	background-color: var(--buttonColor);
 	border:none;
@@ -403,7 +403,7 @@ h6 { font-size: 16px;}
 @media screen and (max-width: 800px){
 	.intro-wrapper{
 		grid-template-columns: 1fr;
-		grid-template-areas: 
+		grid-template-areas:
 			'nav-wrapper'
 			'left-column'
 			'right-column'
@@ -452,7 +452,7 @@ h6 { font-size: 16px;}
 	margin-bottom: 10px;
 	top: 10px;
   }
-  
+
   .card-component {
 	border: 1px solid gray;
 	border-radius: 5px;
@@ -462,15 +462,15 @@ h6 { font-size: 16px;}
 	position: relative;
 	bottom: 20px;
   }
-  
+
   .card-component .__year {
 	font-size: 1.5em;
   }
-  
+
   .card-component .__title {
 	font-size: 1em;
   }
-  
+
   .card-component .__text {
 	color: gray;
   }
